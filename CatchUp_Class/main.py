@@ -2,30 +2,31 @@ file = open('/Users/pc/Desktop/GIT/python/CatchUp_Class/main.py','r')
 raw_data = file.readlines()
 #print(raw_data)
 
-for sentence in raw_data:
-    if sentence.startswith('Date'):
-        if sentence.find('(Fri') == -1:continue
-    else:
-        print(sentence)
-
-#for link in raw_data:
-   # if link.find('https://') != -1 or link.find('http://') != -1 :
-       # print(link)
+# for sentence in raw_data:
+#     if sentence.startswith('Date'):
+#         if sentence.find('(Fri') == -1: continue
+#     else:
+#         print(sentence)
 
 
-# email_bucket = []
-# tmp_word = []
-# for email in raw_data:
-#     tmp_word.extend(email.split(' '))
-# for text in tmp_word:
-#     if text.find('@') != -1:
-#         at_post = text.find('@')
-#         left_part = text[:at_post]
-#         right_part = text[at_post:]
-#         email = left_part+right_part
-#         email = email.strip('\n<>();')
-#         if email != 'apache@localhost':
-#             email_bucket.append(email)
+# for link in raw_data:
+#    if link.find('https://') != -1 or link.find('http://') != -1 :
+#        print(link)
+
+
+email_bucket = []
+tmp_word = []
+for email in raw_data:
+    tmp_word.extend(email.split(' '))
+for text in tmp_word:
+    if text.find('@') != -1:
+        at_post = text.find('@')
+        left_part = text[:at_post]
+        right_part = text[at_post:]
+        email = left_part+right_part
+        email = email.strip('\n<>();')
+        if email != 'apache@localhost':
+            email_bucket.append(email)
     
 # #print(email_bucket)
 
